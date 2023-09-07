@@ -1,0 +1,18 @@
+Function CHATSHORT(prompt As String) As String
+    Dim response As String
+    Dim adjustedPrompt As String
+    
+    ' Adjust the prompt to guide the model towards a concise answer.
+    adjustedPrompt = "Assume that a 'concise answer' is the most basic, minimal answer. For example, if the question provided by a prompt is 'What is the square root of 64, the answer would be simply 8. No period should follow the answer.'. Provide a concise answer to: " & prompt
+    
+    ' Call the CHATX function to get the response
+    response = CHATX(adjustedPrompt)
+    
+    ' Remove a period at the end, if present
+    If Right(response, 1) = "." Then
+        response = Left(response, Len(response) - 1)
+    End If
+    
+    ' Return the stripped response
+    CHATSHORT = Trim(response)
+End Function
