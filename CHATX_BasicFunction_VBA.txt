@@ -24,7 +24,8 @@ Function CHATX(user_query As String) As String
     ' Send the request
     XMLHTTP.send payload
 
-    ' Parse the response    Set jsonResponse = JsonConverter.ParseJson(XMLHTTP.responseText)
+    ' Parse the response    
+    Set jsonResponse = JsonConverter.ParseJson(XMLHTTP.responseText)
 
     ' Extract the message from the response
     CHATX = jsonResponse("choices")(1)("message")("content")
