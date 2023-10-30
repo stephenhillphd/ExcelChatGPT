@@ -1,0 +1,18 @@
+Function CHATSENT(prompt As String) As String
+    Dim response As String
+    Dim adjustedPrompt As String
+    
+    ' Instruct sentiment analysis to be performed
+    adjustedPrompt = "Analyze the sentiment of the text provided. Sentiment should be stated as Positive, Negative, or Neutral. Provde a concise, one word answer. The text is:" & prompt
+    
+    ' Call the CHATX function to get the response
+    response = CHATX(adjustedPrompt)
+    
+    ' Remove a period at the end, if present
+    If Right(response, 1) = "." Then
+        response = Left(response, Len(response) - 1)
+    End If
+    
+    ' Return the stripped response
+    CHATSENT = Trim(response)
+End Function
