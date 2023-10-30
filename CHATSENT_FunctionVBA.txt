@@ -3,7 +3,7 @@ Function CHATSENT(prompt As String) As String
     Dim adjustedPrompt As String
     
     ' Instruct sentiment analysis to be performed
-    adjustedPrompt = "Analyze the sentiment of the text provided. Sentiment should be stated as Positive, Negative, or Neutral. Provde a concise, one word answer. The text is:" & prompt
+    adjustedPrompt = "Analyze the sentiment of the text provided. Sentiment should be stated as Positive, Negative, or Neutral. Provide a concise, one word answer. The text is:" & prompt
     
     ' Call the CHATX function to get the response
     response = CHATX(adjustedPrompt)
